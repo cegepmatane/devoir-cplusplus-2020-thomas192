@@ -6,6 +6,7 @@
  */
 
 #include "Role.h"
+#include <sstream>
 
 Role::Role() {}
 
@@ -21,7 +22,15 @@ Role::~Role() {
 }
 
 string Role::exporter() {
-	return"<Role></Role>";
+	stringstream xml;
+
+	xml << "<nom>" << this->nom << "</nom>" << endl;
+	xml << "<vie>" << this->vie << "</vie>" << endl;
+	xml << "<vitesse>" << this->vitesse << "</vitesse>" << endl;
+
+	xml << "<Role>" << xml.str() << "</Role>";
+
+	return xml.str();
 }
 
 const string& Role::getNom() const {
