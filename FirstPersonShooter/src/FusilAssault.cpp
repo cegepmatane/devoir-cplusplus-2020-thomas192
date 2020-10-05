@@ -25,7 +25,7 @@ string FusilAssault::exporter() {
 	xml << "<degat>" << this->degat << "</degat>" << endl;
 	xml << "<portee>" << this->portee << "</portee>" << endl;
 	xml << "<cadence>" << this->cadence << "</cadence>" << endl;
-	xml << "<fusilAssault>" << xml.str() << "</fusilAssault>";
+	xml << "<fusilAssault>" << xml.str() << "</fusilAssault>" << endl;
 	return xml.str();
 }
 

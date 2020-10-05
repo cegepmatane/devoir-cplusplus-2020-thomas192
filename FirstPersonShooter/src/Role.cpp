@@ -20,7 +20,7 @@ string Role::exporter() {
 	xml << "<vie>" << this->vie << "</vie>" << endl;
 	xml << "<vitesse>" << this->vitesse << "</vitesse>" << endl;
 	xml << this->arme->exporter();
-	xml << "<Role>" << xml.str() << "</Role>";
+	xml << "<Role>" << xml.str() << "</Role>" << endl;
 	return xml.str();
 }
 

@@ -25,7 +25,7 @@ string Assault::exporter() {
 	xml << "<vie>" << this->vie << "</vie>" << endl;
 	xml << "<vitesse>" << this->vitesse << "</vitesse>" << endl;
 	xml << this->arme->exporter();
-	xml << "<Assault>" << xml.str() << "</Assault>";
+	xml << "<Assault>" << xml.str() << "</Assault>" << endl;
 	return xml.str();
 }
 
