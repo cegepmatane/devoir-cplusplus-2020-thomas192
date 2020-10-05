@@ -6,10 +6,13 @@
  */
 
 #include "Assault.h"
+#include <sstream>
 
-Assault::Assault() {
+Assault::Assault(string nom) {
+	this->nom=nom;
 	this->vie=100;
 	this->vitesse=1;
+	this->arme=new Arme("FAMAS", 33, 300, 5);
 }
 
 Assault::Assault(const Assault &other) {}
@@ -17,7 +20,13 @@ Assault::Assault(const Assault &other) {}
 Assault::~Assault() {}
 
 string Assault::exporter() {
-	return "<Assault></Assault>";
+	stringstream xml;
+	xml << "<nom>" << this->nom << "</nom>" << endl;
+	xml << "<vie>" << this->vie << "</vie>" << endl;
+	xml << "<vitesse>" << this->vitesse << "</vitesse>" << endl;
+	xml << this->arme->exporter();
+	xml << "<Assault>" << xml.str() << "</Assault>";
+	return xml.str();
 }
 
 

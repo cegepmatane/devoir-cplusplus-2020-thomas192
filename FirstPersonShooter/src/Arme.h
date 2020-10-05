@@ -11,6 +11,7 @@
 using namespace std;
 
 class Arme {
+
 protected :
 	string nom;
 	int degat;
@@ -28,7 +29,7 @@ public:
 	void setNom(const string &nom);
 	int getPortee() const;
 	void setPortee(int portee);
-	string exporter();
+	virtual string exporter();
 };
 
 #endif /* ARME_H_ */

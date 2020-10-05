@@ -7,12 +7,11 @@
 
 #ifndef ASSAULT_H_
 #define ASSAULT_H_
-
 #include"Role.h"
 
 class Assault :public Role {
 public:
-	Assault();
+	Assault(string);
 	virtual ~Assault();
 	Assault(const Assault &other);
 	string exporter();

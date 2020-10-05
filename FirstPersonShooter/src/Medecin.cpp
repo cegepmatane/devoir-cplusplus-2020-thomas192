@@ -6,10 +6,12 @@
  */
 
 #include "Medecin.h"
+#include <sstream>
 
-Medecin::Medecin() {
-	this->vie=90;
-	this->vitesse=1.1;
+Medecin::Medecin(string nom) {
+	this->nom=nom;
+	this->vie=80;
+	this->vitesse=1.2;
 }
 
 Medecin::Medecin(const Medecin &other) {}
@@ -17,6 +19,14 @@ Medecin::Medecin(const Medecin &other) {}
 Medecin::~Medecin() {}
 
 string Medecin::exporter() {
-	return "<Medecin></Medecin>";
+	stringstream xml;
+
+	xml << "<nom>" << this->nom << "</nom>" << endl;
+	xml << "<vie>" << this->vie << "</vie>" << endl;
+	xml << "<vitesse>" << this->vitesse << "</vitesse>" << endl;
+	xml << this->arme->exporter();
+	xml << "<Medecin>" << xml.str() << "</Medecin>";
+
+	return xml.str();
 }
 

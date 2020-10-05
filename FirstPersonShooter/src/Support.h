@@ -12,7 +12,7 @@
 
 class Support :public Role {
 public:
-	Support();
+	Support(string);
 	virtual ~Support();
 	Support(const Support &other);
 	string exporter();

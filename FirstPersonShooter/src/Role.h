@@ -21,7 +21,6 @@ protected:
 
 public:
 	Role();
-	Role(string);
 	virtual ~Role();
 	Role (const Role &other);
 	const string& getNom() const;

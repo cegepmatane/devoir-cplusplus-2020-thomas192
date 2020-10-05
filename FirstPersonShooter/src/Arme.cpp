@@ -8,12 +8,7 @@
 #include "Arme.h"
 #include <sstream>
 
-Arme::Arme() {
-	this->nom="";
-	this->degat=0;
-	this->portee=0;
-	this->cadence=0;
-}
+Arme::Arme() {}
 
 Arme::Arme(string nom, int degat, int portee, float cadence) {
 	this->nom=nom;

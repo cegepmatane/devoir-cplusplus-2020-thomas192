@@ -12,7 +12,7 @@
 
 class Medecin :public Role {
 public:
-	Medecin();
+	Medecin(string);
 	virtual ~Medecin();
 	Medecin(const Medecin &other);
 	string exporter();
