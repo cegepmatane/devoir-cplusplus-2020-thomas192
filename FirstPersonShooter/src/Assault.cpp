@@ -8,15 +8,13 @@
 #include "Assault.h"
 
 Assault::Assault() {
-
+	this->vie=100;
+	this->vitesse=1;
 }
 
-Assault::Assault(const Assault &other) {
+Assault::Assault(const Assault &other) {}
 
-}
-
-Assault::~Assault() {
-}
+Assault::~Assault() {}
 
 string Assault::exporter() {
 	return "<Assault></Assault>";

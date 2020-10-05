@@ -7,9 +7,9 @@
 
 #ifndef ROLE_H_
 #define ROLE_H_
-
 #include <iostream>
 using namespace std;
+#include "Arme.h"
 
 class Role {
 	
@@ -17,7 +17,7 @@ protected:
 	string nom;
 	int vie;
 	float vitesse;
-
+	Arme* arme;
 
 public:
 	Role();

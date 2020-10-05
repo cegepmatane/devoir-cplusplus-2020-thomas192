@@ -8,16 +8,13 @@
 #include "Medecin.h"
 
 Medecin::Medecin() {
-
+	this->vie=90;
+	this->vitesse=1.1;
 }
 
-Medecin::Medecin(const Medecin &other) {
+Medecin::Medecin(const Medecin &other) {}
 
-}
-
-Medecin::~Medecin() {
-
-}
+Medecin::~Medecin() {}
 
 string Medecin::exporter() {
 	return "<Medecin></Medecin>";
