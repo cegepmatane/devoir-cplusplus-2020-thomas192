@@ -25,6 +25,16 @@ string Role::exporter() {
 	return xml.str();
 }
 
+ostream& operator<<(ostream& sortie, const Role& role) {
+	sortie << "<Role>" << endl;
+	sortie << "<nom>" << role.nom << "</nom>" << endl;
+	sortie << "<vie>" << role.vie << "</vie>" << endl;
+	sortie << "<vitesse>" << role.vitesse << "</vitesse>" << endl;
+	sortie << role.arme->exporter();
+	sortie << "</Role>" << endl;
+	return sortie;
+}
+
 
 const string& Role::getNom() const {
 	return nom;

@@ -31,4 +31,12 @@ string Assault::exporter() {
 	return xml.str();
 }
 
-
+ostream& operator<<(ostream& sortie, const Assault& assault) {
+	sortie << "<Assault>" << endl;
+	sortie << "<nom>" << assault.nom << "</nom>" << endl;
+	sortie << "<vie>" << assault.vie << "</vie>" << endl;
+	sortie << "<vitesse>" << assault.vitesse << "</vitesse>" << endl;
+	sortie << assault.arme->exporter();
+	sortie << "</Assault>" << endl;
+	return sortie;
+}

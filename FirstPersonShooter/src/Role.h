@@ -30,6 +30,7 @@ public:
 	float getVitesse() const;
 	void setVitesse(float vitesse);
 	virtual string exporter();
+	friend ostream& operator<<(ostream&, const Role&);
 };
 
 #endif /* ROLE_H_ */

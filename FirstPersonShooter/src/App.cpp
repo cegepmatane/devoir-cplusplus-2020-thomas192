@@ -29,21 +29,22 @@ int main() {
 	//role2 = new Role("Role2");
 	//cout << "Role2 : " << role2->exporter() << endl;
 
-	//Assault assault;
+	//Assault assault("Rex");
+	//cout << assault << endl;
 	//cout << "Assault : " << assault.exporter() << endl;
 
-	//Role* assault;
-	//assault = new Assault("Rex");
+	Role* assault;
+	assault = new Assault("Rex");
+	cout << *assault << endl;
 	//cout << "Assault : " << assault->exporter() << endl;
-
 
 	//Role* medecin;
 	//medecin = new Medecin("Bob");
 	//cout << "Medecin : " << medecin->exporter() << endl;
 
-	Role* support;
-	support = new Support("Max");
-	cout << "Support : " << support->exporter() << endl;
+	//Role* support;
+	//support = new Support("Max");
+	//cout << "Support : " << support->exporter() << endl;
 
 
 	return 0;

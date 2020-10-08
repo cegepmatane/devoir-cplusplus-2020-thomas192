@@ -15,6 +15,7 @@ public:
 	virtual ~Assault();
 	Assault(const Assault &other);
 	string exporter();
+	friend ostream& operator<<(ostream&, const Assault&);
 
 };
 
