@@ -20,7 +20,6 @@ protected :
 
 public:
 	Arme();
-	Arme(string, int, int, float);
 	virtual ~Arme();
 	Arme (const Arme &other);
 	int getDegat() const;

@@ -6,6 +6,7 @@
  */
 
 #include "Mitraillette.h"
+#include <sstream>
 
 Mitraillette::Mitraillette(string nom) {
 	this->nom=nom;
@@ -19,6 +20,13 @@ Mitraillette::Mitraillette(const Mitraillette &other) {}
 Mitraillette::~Mitraillette() {}
 
 string Mitraillette::exporter() {
-
+	stringstream xml;
+	xml << "<Mitraillette>" << endl;
+	xml << "<nom>" << this->nom << "</nom>" << endl;
+	xml << "<degat>" << this->degat << "</degat>" << endl;
+	xml << "<portee>" << this->portee << "</portee>" << endl;
+	xml << "<cadence>" << this->cadence << "</cadence>" << endl;
+	xml << "</Mitraillette>" << endl;
+	return xml.str();
 }
 

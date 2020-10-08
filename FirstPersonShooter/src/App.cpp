@@ -32,23 +32,19 @@ int main() {
 	//Assault assault;
 	//cout << "Assault : " << assault.exporter() << endl;
 
-	Role* assault;
-	assault = new Assault("Assault");
-	cout << "Assault : " << assault->exporter() << endl;
+	//Role* assault;
+	//assault = new Assault("Rex");
+	//cout << "Assault : " << assault->exporter() << endl;
 
-	//Arme* fusilAssault;
-	//fusilAssault = new FusilAssault("FAMAS");
-	//cout << "FusilAssault : " << fusilAssault->exporter() << endl;
 
-	/*
-	Role* medecin;
-	medecin = new Medecin("Medecin");
-	cout << "Medecin : " << medecin->exporter() << endl;
+	//Role* medecin;
+	//medecin = new Medecin("Bob");
+	//cout << "Medecin : " << medecin->exporter() << endl;
 
 	Role* support;
-	support = new Support("Support");
+	support = new Support("Max");
 	cout << "Support : " << support->exporter() << endl;
-	*/
+
 
 	return 0;
 }

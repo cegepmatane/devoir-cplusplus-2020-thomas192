@@ -7,7 +7,6 @@
 
 #ifndef MEDECIN_H_
 #define MEDECIN_H_
-
 #include"Role.h"
 
 class Medecin :public Role {

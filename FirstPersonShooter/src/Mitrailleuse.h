@@ -11,7 +11,7 @@
 
 class Mitrailleuse :public Arme {
 public:
-	Mitrailleuse();
+	Mitrailleuse(string);
 	virtual ~Mitrailleuse();
 	Mitrailleuse(const Mitrailleuse &other);
 	string exporter();

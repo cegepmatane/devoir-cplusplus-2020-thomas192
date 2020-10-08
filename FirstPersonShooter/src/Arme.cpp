@@ -10,25 +10,18 @@
 
 Arme::Arme() {}
 
-Arme::Arme(string nom, int degat, int portee, float cadence) {
-	this->nom=nom;
-	this->degat=degat;
-	this->portee=portee;
-	this->cadence=cadence;
-}
-
 Arme::Arme(const Arme &other) {}
 
 Arme::~Arme() {}
 
 string Arme::exporter() {
 	stringstream xml;
-	xml << "<arme>" << endl;
+	xml << "<Arme>" << endl;
 	xml << "<nom>" << this->nom << "</nom>" << endl;
 	xml << "<degat>" << this->degat << "</degat>" << endl;
 	xml << "<portee>" << this->portee << "</portee>" << endl;
 	xml << "<cadence>" << this->cadence << "</cadence>" << endl;
-	xml << "</arme>" << endl;
+	xml << "</Arme>" << endl;
 	return xml.str();
 }
 
