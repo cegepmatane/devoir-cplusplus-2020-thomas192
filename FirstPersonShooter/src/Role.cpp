@@ -16,11 +16,12 @@ Role::~Role() {}
 
 string Role::exporter() {
 	stringstream xml;
+	xml << "<role>" << endl;
 	xml << "<nom>" << this->nom << "</nom>" << endl;
 	xml << "<vie>" << this->vie << "</vie>" << endl;
 	xml << "<vitesse>" << this->vitesse << "</vitesse>" << endl;
 	xml << this->arme->exporter();
-	xml << "<Role>" << xml.str() << "</Role>" << endl;
+	xml << "</role>" << endl;
 	return xml.str();
 }
 

@@ -20,12 +20,12 @@ Support::~Support() {}
 
 string Support::exporter() {
 	stringstream xml;
-
+	xml << "<support>" << endl;
 	xml << "<nom>" << this->nom << "</nom>" << endl;
 	xml << "<vie>" << this->vie << "</vie>" << endl;
 	xml << "<vitesse>" << this->vitesse << "</vitesse>" << endl;
 	xml << this->arme->exporter();
-	xml << "<Support>" << xml.str() << "</Support>";
+	xml << "</support>" << endl;
 
 	return xml.str();
 }

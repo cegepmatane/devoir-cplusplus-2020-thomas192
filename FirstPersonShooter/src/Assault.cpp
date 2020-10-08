@@ -21,11 +21,12 @@ Assault::~Assault() {}
 
 string Assault::exporter() {
 	stringstream xml;
+	xml << "<assault>" << endl;
 	xml << "<nom>" << this->nom << "</nom>" << endl;
 	xml << "<vie>" << this->vie << "</vie>" << endl;
 	xml << "<vitesse>" << this->vitesse << "</vitesse>" << endl;
 	xml << this->arme->exporter();
-	xml << "<Assault>" << xml.str() << "</Assault>" << endl;
+	xml << "</assault>" << endl;
 	return xml.str();
 }
 

@@ -23,11 +23,12 @@ Arme::~Arme() {}
 
 string Arme::exporter() {
 	stringstream xml;
+	xml << "<arme>" << endl;
 	xml << "<nom>" << this->nom << "</nom>" << endl;
 	xml << "<degat>" << this->degat << "</degat>" << endl;
 	xml << "<portee>" << this->portee << "</portee>" << endl;
 	xml << "<cadence>" << this->cadence << "</cadence>" << endl;
-	xml <<"<arme>" << xml.str() << "</arme>" << endl;
+	xml << "</arme>" << endl;
 	return xml.str();
 }
 

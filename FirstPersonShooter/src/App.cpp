@@ -14,6 +14,9 @@ using namespace std;
 #include "Assault.h"
 #include "Medecin.h"
 #include "Support.h"
+#include "FusilAssault.h"
+#include "Mitraillette.h"
+#include "Mitrailleuse.h"
 
 int main() {
 	//Role role;
@@ -29,13 +32,13 @@ int main() {
 	//Assault assault;
 	//cout << "Assault : " << assault.exporter() << endl;
 
-	//Role* assault;
-	//assault = new Assault("Assault");
-	//cout << "Assault : " << assault->exporter() << endl;
+	Role* assault;
+	assault = new Assault("Assault");
+	cout << "Assault : " << assault->exporter() << endl;
 
-	Arme* fusilAssault;
-	fusilAssault = new FusilAssault("FAMAS");
-	cout << "FusilAssault : " << fusilAssault->exporter() << endl;
+	//Arme* fusilAssault;
+	//fusilAssault = new FusilAssault("FAMAS");
+	//cout << "FusilAssault : " << fusilAssault->exporter() << endl;
 
 	/*
 	Role* medecin;

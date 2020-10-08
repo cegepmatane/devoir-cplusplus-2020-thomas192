@@ -20,12 +20,12 @@ Medecin::~Medecin() {}
 
 string Medecin::exporter() {
 	stringstream xml;
-
+	xml << "<medecin>" << endl;
 	xml << "<nom>" << this->nom << "</nom>" << endl;
 	xml << "<vie>" << this->vie << "</vie>" << endl;
 	xml << "<vitesse>" << this->vitesse << "</vitesse>" << endl;
 	xml << this->arme->exporter();
-	xml << "<Medecin>" << xml.str() << "</Medecin>";
+	xml << "</medecin>" << endl;
 
 	return xml.str();
 }
