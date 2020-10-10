@@ -31,6 +31,7 @@ public:
 	void setVitesse(float vitesse);
 	virtual string exporter();
 	friend ostream& operator<<(ostream&, const Role&);
+	virtual ostream& afficher(ostream&) const;
 };
 
 #endif /* ROLE_H_ */

@@ -15,6 +15,7 @@ public:
 	virtual ~Mitrailleuse();
 	Mitrailleuse(const Mitrailleuse &other);
 	string exporter();
+	ostream& afficher(ostream&) const;
 };
 
 #endif /* MITRAILLEUSE_H_ */

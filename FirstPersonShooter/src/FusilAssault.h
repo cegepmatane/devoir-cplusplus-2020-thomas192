@@ -15,6 +15,7 @@ public:
 	virtual ~FusilAssault();
 	FusilAssault(const FusilAssault &other);
 	string exporter();
+	ostream& afficher(ostream&) const;
 };
 
 #endif /* FUSILASSAULT_H_ */

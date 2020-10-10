@@ -15,7 +15,7 @@ public:
 	virtual ~Medecin();
 	Medecin(const Medecin &other);
 	string exporter();
-
+	ostream& afficher(ostream&) const;
 };
 
 #endif /* MEDECIN_H_ */

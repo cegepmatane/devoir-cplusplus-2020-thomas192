@@ -40,10 +40,12 @@ int main() {
 
 	//Role* medecin;
 	//medecin = new Medecin("Bob");
+	//cout << *medecin << endl;
 	//cout << "Medecin : " << medecin->exporter() << endl;
 
 	//Role* support;
 	//support = new Support("Max");
+	//cout << *support << endl;
 	//cout << "Support : " << support->exporter() << endl;
 
 

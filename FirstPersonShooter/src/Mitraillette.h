@@ -15,6 +15,7 @@ public:
 	virtual ~Mitraillette();
 	Mitraillette(const Mitraillette &other);
 	string exporter();
+	ostream& afficher(ostream&) const;
 };
 
 #endif /* MITRAILLETTE_H_ */

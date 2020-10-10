@@ -15,8 +15,7 @@ public:
 	virtual ~Assault();
 	Assault(const Assault &other);
 	string exporter();
-	friend ostream& operator<<(ostream&, const Assault&);
-
+	ostream& afficher(ostream&) const;
 };
 
 #endif /* ASSAULT_H_ */

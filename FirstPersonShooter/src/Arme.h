@@ -29,6 +29,8 @@ public:
 	int getPortee() const;
 	void setPortee(int portee);
 	virtual string exporter();
+	friend ostream& operator<<(ostream&, const Arme&);
+	virtual ostream& afficher(ostream&) const;
 };
 
 #endif /* ARME_H_ */

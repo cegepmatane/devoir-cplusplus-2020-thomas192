@@ -30,3 +30,13 @@ string FusilAssault::exporter() {
 	return xml.str();
 }
 
+ostream& FusilAssault::afficher(ostream& sortie) const {
+	sortie << "<FusilAssault>" << endl;
+	sortie << "<nom>" << this->nom << "</nom>" << endl;
+	sortie << "<degat>" << this->degat << "</degat>" << endl;
+	sortie << "<portee>" << this->portee << "</portee>" << endl;
+	sortie << "<cadence>" << this->cadence << "</cadence>" << endl;
+	sortie << "</FusilAssault>" << endl;
+	return sortie;
+}
+

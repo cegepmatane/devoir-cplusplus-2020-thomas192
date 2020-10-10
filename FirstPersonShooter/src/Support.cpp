@@ -28,7 +28,16 @@ string Support::exporter() {
 	xml << "<vitesse>" << this->vitesse << "</vitesse>" << endl;
 	xml << this->arme->exporter();
 	xml << "</Support>" << endl;
-
 	return xml.str();
+}
+
+ostream& Support::afficher(ostream& sortie) const {
+	sortie << "<Support>" << endl;
+	sortie << "<nom>" << this->nom << "</nom>" << endl;
+	sortie << "<vie>" << this->vie << "</vie>" << endl;
+	sortie << "<vitesse>" << this->vitesse << "</vitesse>" << endl;
+	sortie << *this->arme;
+	sortie << "</Support>" << endl;
+	return sortie;
 }
 

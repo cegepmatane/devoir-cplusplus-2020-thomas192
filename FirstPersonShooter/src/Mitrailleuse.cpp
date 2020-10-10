@@ -30,3 +30,12 @@ string Mitrailleuse::exporter() {
 	return xml.str();
 }
 
+ostream& Mitrailleuse::afficher(ostream& sortie) const {
+	sortie << "<Mitrailleuse>" << endl;
+	sortie << "<nom>" << this->nom << "</nom>" << endl;
+	sortie << "<degat>" << this->degat << "</degat>" << endl;
+	sortie << "<portee>" << this->portee << "</portee>" << endl;
+	sortie << "<cadence>" << this->cadence << "</cadence>" << endl;
+	sortie << "</Mitrailleuse>" << endl;
+	return sortie;
+}

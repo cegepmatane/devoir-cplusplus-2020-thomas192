@@ -15,16 +15,16 @@ Arme::Arme(const Arme &other) {}
 Arme::~Arme() {}
 
 string Arme::exporter() {
-	stringstream xml;
-	xml << "<Arme>" << endl;
-	xml << "<nom>" << this->nom << "</nom>" << endl;
-	xml << "<degat>" << this->degat << "</degat>" << endl;
-	xml << "<portee>" << this->portee << "</portee>" << endl;
-	xml << "<cadence>" << this->cadence << "</cadence>" << endl;
-	xml << "</Arme>" << endl;
-	return xml.str();
+	return "";
 }
 
+ostream& operator<<(ostream& sortie, const Arme& arme) {
+	return arme.afficher(sortie);
+}
+
+ostream& Arme::afficher(ostream& sortie) const {
+	return sortie;
+}
 
 int Arme::getDegat() const {
 	return degat;

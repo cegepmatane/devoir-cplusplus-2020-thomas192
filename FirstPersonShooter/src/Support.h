@@ -16,7 +16,7 @@ public:
 	virtual ~Support();
 	Support(const Support &other);
 	string exporter();
-
+	ostream& afficher(ostream&) const;
 };
 
 #endif /* SUPPORT_H_ */

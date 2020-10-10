@@ -15,23 +15,14 @@ Role::Role(const Role &other) {}
 Role::~Role() {}
 
 string Role::exporter() {
-	stringstream xml;
-	xml << "<Role>" << endl;
-	xml << "<nom>" << this->nom << "</nom>" << endl;
-	xml << "<vie>" << this->vie << "</vie>" << endl;
-	xml << "<vitesse>" << this->vitesse << "</vitesse>" << endl;
-	xml << this->arme->exporter();
-	xml << "</Role>" << endl;
-	return xml.str();
+	return "";
 }
 
 ostream& operator<<(ostream& sortie, const Role& role) {
-	sortie << "<Role>" << endl;
-	sortie << "<nom>" << role.nom << "</nom>" << endl;
-	sortie << "<vie>" << role.vie << "</vie>" << endl;
-	sortie << "<vitesse>" << role.vitesse << "</vitesse>" << endl;
-	sortie << role.arme->exporter();
-	sortie << "</Role>" << endl;
+	return role.afficher(sortie);
+}
+
+ostream& Role::afficher(ostream& sortie) const {
 	return sortie;
 }
 

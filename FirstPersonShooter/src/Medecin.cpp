@@ -31,3 +31,12 @@ string Medecin::exporter() {
 	return xml.str();
 }
 
+ostream& Medecin::afficher(ostream& sortie) const {
+	sortie << "<Medecin>" << endl;
+	sortie << "<nom>" << this->nom << "</nom>" << endl;
+	sortie << "<vie>" << this->vie << "</vie>" << endl;
+	sortie << "<vitesse>" << this->vitesse << "</vitesse>" << endl;
+	sortie << *this->arme;
+	sortie << "</Medecin>" << endl;
+	return sortie;
+}
