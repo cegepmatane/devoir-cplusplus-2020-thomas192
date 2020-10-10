@@ -19,22 +19,13 @@ using namespace std;
 #include "Mitrailleuse.h"
 
 int main() {
-	//Role role;
-	//cout << "Role : " << role.exporter() << endl;
-
-	//Role role1("Role1");
-	//cout << "Role1 : " << role1.exporter() << endl;
-
-	//Role* role2;
-	//role2 = new Role("Role2");
-	//cout << "Role2 : " << role2->exporter() << endl;
-
 	//Assault assault("Rex");
 	//cout << assault << endl;
 	//cout << "Assault : " << assault.exporter() << endl;
 
 	Role* assault;
 	assault = new Assault("Rex");
+	(*assault)--;
 	cout << *assault << endl;
 	//cout << "Assault : " << assault->exporter() << endl;
 

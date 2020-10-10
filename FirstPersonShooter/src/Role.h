@@ -32,6 +32,7 @@ public:
 	virtual string exporter();
 	friend ostream& operator<<(ostream&, const Role&);
 	virtual ostream& afficher(ostream&) const;
+	void operator--(int);
 };
 
 #endif /* ROLE_H_ */
