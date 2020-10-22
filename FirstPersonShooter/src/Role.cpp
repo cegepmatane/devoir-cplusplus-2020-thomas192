@@ -60,3 +60,7 @@ float Role::getVitesse() const {
 void Role::setVitesse(float vitesse) {
 	this->vitesse = vitesse;
 }
+
+Arme* Role::getArme() {
+	return this->arme;
+}

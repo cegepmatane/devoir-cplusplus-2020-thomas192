@@ -33,6 +33,7 @@ public:
 	friend ostream& operator<<(ostream&, const Role&);
 	virtual ostream& afficher(ostream&) const;
 	void operator--(int);
+	Arme* getArme();
 };
 
 #endif /* ROLE_H_ */
