@@ -1,12 +1,12 @@
 //============================================================================
 // Name        : FirstPersonShooter.cpp
-// Author      : 
+// Author      : Thomas Saudemont
 // Version     :
 // Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
 //============================================================================
 
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <ctime>
 
@@ -24,7 +24,7 @@ using namespace std;
 int main() {
 	string nomMonstre = "Kraken";
 	int vieMonstre = 1200;
-	int degatsMonstre = 30;
+	int degatMonstre = 30;
 	//Assault assault("Rex");
 	//cout << assault << endl;
 	//cout << "Assault : " << assault.exporter() << endl;
@@ -53,6 +53,7 @@ int main() {
 	//cout << *support << endl;
 	//cout << "Support : " << support->exporter() << endl;
 
+
 	/* BOULCE DE JEU*/
 	bool partie = true;
 	int tour = 0;
@@ -68,7 +69,7 @@ int main() {
 
 		switch(touche) {
 
-			// Attaquer
+			// Attaquer le monstre
 			case 'A':case 'a': {
 				for(iterateur = roles.begin(); iterateur != roles.end(); iterateur++) {
 					int tirs = rand()%8+1;
@@ -84,10 +85,10 @@ int main() {
 			}
 				break;
 
-			// Soigner
+			// Soigner l'équipe
 			case 'H':case 'h': {
 				for(iterateur = roles.begin(); iterateur != roles.end(); iterateur++) {
-					int gainDeVie = rand()%60+1;
+					int gainDeVie = rand()%80+1;
 					(*iterateur)->setVie((*iterateur)->getVie()+gainDeVie);
 					cout << (*iterateur)->getNom() << " (" << (*iterateur)->getVie() << " PV)" << " gagne "
 							<< gainDeVie << " point(s) de vie" << endl;
@@ -112,14 +113,14 @@ int main() {
 			// Le monstre attaque
 			for(iterateur = roles.begin(); iterateur != roles.end(); iterateur++) {
 				if(rand()%5+1 == 1) {
-					(*iterateur)->setVie((*iterateur)->getVie()-degatsMonstre*2);
-					cout << "Le " << nomMonstre << " inflige un coup critique de " << degatsMonstre*2
+					(*iterateur)->setVie((*iterateur)->getVie()-degatMonstre*2);
+					cout << "Le " << nomMonstre << " inflige un coup critique de " << degatMonstre*2
 							<< " points de dégats à " << (*iterateur)->getNom() << " (" << (*iterateur)->getVie()
 							<< " PV)" << endl;
-				} else {
-				(*iterateur)->setVie((*iterateur)->getVie()-degatsMonstre);
+				}else{
+				(*iterateur)->setVie((*iterateur)->getVie()-degatMonstre);
 				cout << "Le " << nomMonstre << " attaque " << (*iterateur)->getNom() << " (" << (*iterateur)->getVie()
-						<< " PV)" << " et lui retire " << degatsMonstre << " points de vie "  << endl;
+						<< " PV)" << " et lui retire " << degatMonstre << " points de vie "  << endl;
 				}
 			}
 			cout << "" << endl;
@@ -143,7 +144,7 @@ int main() {
 					cout << (*iterateur)->getNom() << " est mort pendant ce tour" << endl;
 					cout << "" << endl;
 					iterateur = roles.erase(iterateur);
-				} else {
+				}else{
 					iterateur++;
 				}
 			}
@@ -152,8 +153,70 @@ int main() {
 				partie = false;
 			}
 		}
-		//cout << *assault << endl;
 	}
+
+
+	/* SAUVEGARDE DE LA PARTIE */
+	string const fichierSauvegarde("jeu.txt");
+
+	// Si le fichier existe déjà on supprime la dernière ligne
+	ifstream fluxLecture(fichierSauvegarde.c_str());
+	bool existe = true;
+	if(!fluxLecture) {
+		existe = false;
+	}else{
+		string ligne;
+		string ligneASupprimer = "</jeu>";
+		ofstream temp("temp.txt");
+		while(getline(fluxLecture, ligne)) {
+			ligne.replace(ligne.find(ligneASupprimer), ligneASupprimer.length(), "");
+			temp << ligne << endl;
+		}
+		temp.close();
+		fluxLecture.close();
+		remove(fichierSauvegarde.c_str());
+		rename("temp.txt", fichierSauvegarde.c_str());
+	}
+
+	//cout << existe << endl;
+
+	// Ecriture des données
+	ofstream flux(fichierSauvegarde.c_str(), ofstream::app | ofstream::out);
+	time_t now = time(0);
+	char* date = ctime(&now);
+	if(flux) {
+		if(!existe)
+			flux << "<jeu>" << endl;
+
+		// Sauvegarde des personnages si encore en vie
+		flux << "<partie>" << endl;
+		flux << "<date>" << date << "</date>" << endl;
+		flux << "<tours>" << tour << "</tours>" << endl;
+		if(!roles.empty()) {
+			flux << "<equipe>" << endl;
+			for(iterateur = roles.begin(); iterateur != roles.end(); iterateur++) {
+				flux << (*iterateur)->exporter(); // Surcharge de "<<" ne fonctionne pas avec l'itérateur :(
+			}
+			flux << "</equipe>" << endl;
+		}
+		// Sauvegarde du monstre si encore en vie
+		if(vieMonstre > 0) {
+			flux << "<Monstre>" << endl;
+			flux << "<nom>" << nomMonstre << "</nom>" << endl;
+			flux << "<vie>" << vieMonstre << "</vie>" << endl;
+			flux << "<degat>" << degatMonstre << "</degat>" << endl;
+			flux << "</Monstre>" << endl;
+		}
+		flux << "</partie>" << endl;
+		flux << "</jeu>";
+	}else{
+		cout << "ERREUR: Impossible d'ouvrir le fichier \"jeu.txt\"" << endl;
+	}
+	flux.close();
+	// On libère la mémoire
+	delete(assault);
+	delete(medecin);
+	delete(support);
 
 	return 0;
 }

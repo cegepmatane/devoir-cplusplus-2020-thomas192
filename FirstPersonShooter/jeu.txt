@@ -1,0 +1,12 @@
+<jeu>
+<partie>
+<date>Mon Oct 26 17:56:24 2020
+</date>
+<tours>3</tours>
+<Monstre>
+<nom>Kraken</nom>
+<vie>360</vie>
+<degat>30</degat>
+</Monstre>
+</partie>
+</jeu>
