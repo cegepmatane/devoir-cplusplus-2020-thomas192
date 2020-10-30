@@ -9,6 +9,7 @@
 #include <fstream>
 #include <vector>
 #include <ctime>
+#include <regex>
 
 using namespace std;
 
@@ -169,7 +170,7 @@ int main() {
 		string ligneASupprimer = "</jeu>";
 		ofstream temp("temp.txt");
 		while(getline(fluxLecture, ligne)) {
-			ligne.replace(ligne.find(ligneASupprimer), ligneASupprimer.length(), "");
+			ligne = regex_replace(ligne, regex(ligneASupprimer), "");
 			temp << ligne << endl;
 		}
 		temp.close();

@@ -1,12 +1,42 @@
 <jeu>
 <partie>
-<date>Mon Oct 26 17:56:24 2020
+<date>Fri Oct 30 14:31:32 2020
 </date>
-<tours>3</tours>
+<tours>4</tours>
 <Monstre>
 <nom>Kraken</nom>
-<vie>360</vie>
+<vie>114</vie>
 <degat>30</degat>
 </Monstre>
+</partie>
+
+<partie>
+<date>Fri Oct 30 14:32:15 2020
+</date>
+<tours>8</tours>
+<Monstre>
+<nom>Kraken</nom>
+<vie>3</vie>
+<degat>30</degat>
+</Monstre>
+</partie>
+
+<partie>
+<date>Fri Oct 30 14:33:19 2020
+</date>
+<tours>21</tours>
+<equipe>
+<Assault>
+<nom>Rex</nom>
+<vie>41</vie>
+<vitesse>1</vitesse>
+<FusilAssault>
+<nom>FAMAS</nom>
+<degat>27</degat>
+<portee>200</portee>
+<cadence>6</cadence>
+</FusilAssault>
+</Assault>
+</equipe>
 </partie>
 </jeu>
